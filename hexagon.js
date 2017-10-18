@@ -7,6 +7,7 @@ var OPPOSITE = 0.5;             // Used for calculating size of side opposite to
 var NUM_COL = 3;                // The number of hexagons in the largest column
 var NUM_HEX = 10;               // Total number of hexagons
 var SPACER = 8;                 // Spacer between each hexagon
+var FACTOR = 2;                 // Controls the side length of the hexagons
 
 var HEX_SIDE_LENGTH;
 var HEX_WIDTH;
@@ -21,7 +22,7 @@ function resizeEvent() {
     windowHeight = $(this).height();
 
     /* Use these parameters to make a complete grid fit to the size of the screen */
-    HEX_SIDE_LENGTH = Math.floor(windowWidth/(NUM_HEX/2));
+    HEX_SIDE_LENGTH = Math.floor(windowWidth/(NUM_HEX/FACTOR));
     HEX_WIDTH = HEX_SIDE_LENGTH + 2*HEX_SIDE_LENGTH*OPPOSITE;
     HEX_HEIGHT = 2*HEX_SIDE_LENGTH*ADJACENT;
     //
